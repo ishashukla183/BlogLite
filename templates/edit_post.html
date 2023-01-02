@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="/edit_post/{{post.id}}" method="post" enctype="multipart/form-data">
+      <label for="">Title : </label> <input type="text" name="title" value="{{post.title}}" required>
+    <br>  <label for="">Description : </label> <input type="text" name="description" value="{{post.description}}"  required>
+    <br> <label for=""> Attach File : </label> <input type="file" name="image_url" value="" accept="image/png">
+    <button type="submit" name="button">Submit</button>
+    </form>
+  </body>
+</html>

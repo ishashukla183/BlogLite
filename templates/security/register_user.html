@@ -1,0 +1,76 @@
+{% extends "security/base.html" %}
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+
+{% block content %}
+<section class="" style="background-color: #9A616D;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+{% include "security/_messages.html" %}
+
+<form action="{{ url_for_security('register') }}" method="POST" name="register_user_form">
+  {{ register_user_form.hidden_tag() }}
+
+
+<div class="row">
+  <div class="col col-lg-6">
+  <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example17">First name</label>
+      <input type="text" name="first_name" value=""  class="form-control form-control-lg" >
+    </div>
+  </div>  <div class="col col-lg-6">
+      <div class="form-outline mb-4">
+          <label class="form-label" for="form2Example17">Last name</label>
+          <input type="text" name="last_name" value=""  class="form-control form-control-lg" >
+        </div></div>  </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example17">Username</label>
+            <input type="text" name="username" value=""  class="form-control form-control-lg" >
+          </div>
+     <div class="form-outline mb-4">
+              {{ render_field_with_errors(register_user_form.email,class="form-control form-control-lg")  }}
+            </div>
+
+
+
+
+      <div class="form-outline mb-4">
+  {{ render_field_with_errors(register_user_form.password, class="form-control form-control-lg") }}</div>
+  {% if register_user_form.password_confirm %}
+
+     <div class="form-outline mb-4">
+     {{ render_field_with_errors(register_user_form.password_confirm, class="form-control form-control-lg") }}
+  </div>  {% endif %}
+  <div class="row">
+    <div class="col-lg-4">
+
+
+
+    <div class="pt-1 mb-4">
+  {{ render_field(register_user_form.submit, class="btn btn-dark btn-lg btn-block") }}</div></div>
+<div class="col-lg-8">
+
+
+    <p  class="mb-5 pb-lg-2" style="color: #393f81; padding-top:20px;"> Already have an account?
+  <span style="color: #393f81;">{% include "security/_menu.html" %}</span>    </p>  </div></div>
+</form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}
