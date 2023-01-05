@@ -46,9 +46,11 @@
           <div class="post__author-username" onclick="window.location.href='/{{user.username}}';">
 
             @{{ user.username }} </div>
-          <div class="post__publish-time"> {{ post.time_created }}
-
-          </div>
+          <div class="post__publish-time" style="margin-right:2rem;"> {{ post.time_created }}</div>
+{% if post.time_updated %} <div class="post__publish-time" > Last updated  {{post.time_updated}} </div>   {% endif %}
+<div class="" onclick="window.location.href='/download/{{post.id}}'" style="color:green; cursor:pointer;">
+ Save
+</div>
         </div>
 
         <div class="post__main-body">
@@ -62,12 +64,15 @@
             {{ post.description }}
           </div>
         </div>
-        {% if post.image_url %}
+      
+
+        {% if images %}
+          {% for image in images %}
         <div class="post__main-body-content-image">
 
 
-          <img src="data:image/png;base64,{{post.image_url}}" alt="post image">
-        </div>{% endif %}
+          <img src="data:image/png;base64,{{image}}" alt="post image">
+        </div>{% endfor %} {% endif %}
         <div class="likesAndComments">
 
           {% if isLikedByUser %}<div class="" onclick="window.location.href='/unlike/{{post.id}}';">
@@ -77,7 +82,46 @@
           {% else %} <div class="" onclick="window.location.href='/like/{{post.id}}';">
 
             <i class=" like-icon fa-regular fa fa-heart"></i>
-          </div> {% endif %}<div class="like-text" onclick="window.location.href='/likes/{{post.id}}';"> {{likes | length }} </div>
+          </div> {% endif %}<div class="like-text" id="showLikes" data-toggle="modal" data-target="#exampleModalCenter{{post.id}}" style="cursor:pointer;"> {{ likes | length }} </div>
+              <!-- show Likes modal -->
+              <div class="modal fade" id="exampleModalCenter{{post.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="ModalTitle"> Likes</h5>
+                      <button type="button btn" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+    {% if likes %}
+    {% for user in likes  %}
+
+    <div class="searchResults__user" >
+      {% if user.profile_picture == None %}
+      <img src="{{ url_for('static', filename = 'placeholder.png')}}" class="post__author-logo" alt="">
+      {% else %}
+       <img src="data:image/png;base64, {{user.profile_picture}} " class="post__author-logo" alt="" >
+       {% endif %}
+       <div class="row">
+          <div class="searchResults__author-username" onclick="window.location.href='/{{user.username}}';">
+            @{{ user.username }} </div> </div>  <div class="row">
+               <div class="searchResults__author-name">
+                 {{ user.first_name }} {{user.last_name }}
+
+                  </div>
+
+
+             </div>         </div>
+
+        {% endfor %}
+               {% else %} No likes yet {% endif %}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
           <div class="" onclick="window.location.href='/comment/{{post.id}}';"> <i class="like-icon fa-regular fa-comment"></i></div>
           <div class="like-text">
             {{comments | length }}
@@ -120,6 +164,9 @@
   </div>
 
 
-</div>
+</div><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
   </body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Questrial&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap" rel="stylesheet">
+
+  </head>
+  <style>
+    .form-group, .form-check{
+      padding:0.75rem;
+    }
+    .label{
+      margin:0.25rem !important;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Questrial&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+  </style>
+  <body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <div class="container containet-fluid" style='padding:4% 6%;'>
+    <div class="h1" style='text-align:center;'>
+      Edit Profile
+    </div>
+  <div class="edit_form">
+    <form method="POST" enctype="multipart/form-data" action='/edit_profile/{{username}}'>
+      <div class="form-group">
+        <label for="formGroupExampleInput">First Name</label>
+        <input type="text" class="form-control" name="first_name" value="{{current_user.first_name}}" required>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Last Name</label>
+        <input type="text" class="form-control" name="last_name" value="{{current_user.last_name}}">
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Username</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" name="username" value="{{current_user.username}}"  required>
+      </div>
+
+      <div class="form-group">
+
+  <label for="formGroupExampleInput2">Change profile picture  </label>
+    <input type="file" class="form-control" name="profile_picture">        </div>
+    <div class="form-check" style="padding-left:2.25rem;">
+          <input class="form-check-input" name="remove_photo" type="checkbox" id="check" value="1">
+          <label class="form-check-label" name="remove_photo" for="gridCheck1">
+          Remove current photo
+          </label>
+        </div>
+  <button type="submit" style='margin-left:90%; !important; margin-top:1rem; width:10%;' class="btn btn-primary">Edit</button>
+{% if error_message %}
+<span style='color: red;'>{{ error_message }}</span>
+{% endif %}
+    </form>
+
+
+
+  </div>
+
+  </div>
+  </body>
+</html>

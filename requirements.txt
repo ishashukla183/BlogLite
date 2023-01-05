@@ -1,5 +1,0 @@
-flask
-Flask-SQlAlchemy
-flask-restful
-sqlalchemy_imageattach
-MagickWand
