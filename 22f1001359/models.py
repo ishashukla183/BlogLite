@@ -1,6 +1,5 @@
 from datetime import datetime
 from database import db
-from flask import Flask
 from sqlalchemy import func
 from flask_security import UserMixin, RoleMixin
 from flask_security.forms import LoginForm, RegisterForm, ValidationError

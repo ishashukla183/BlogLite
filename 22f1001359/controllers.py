@@ -44,6 +44,7 @@ CRUD for user
 
 
 @app.route('/<username>', methods = ['GET'])
+@login_required  
 def profile(username):
  
     if request.method == 'GET':
@@ -195,6 +196,7 @@ def delete_post(id:int):
     return redirect('/' + current_user.username)
 
 @app.route('/post/<post_id>')
+@login_required  
 def view_post(post_id):
     post =  Post.query.filter_by(id = post_id).first()
     
@@ -266,6 +268,7 @@ def comment(post_id):
         return redirect(redirect_url())
     
 @app.route('/download/<post_id>')
+@login_required  
 def download_blog(post_id):
     post =  Post.query.filter_by(id = post_id).first()
     

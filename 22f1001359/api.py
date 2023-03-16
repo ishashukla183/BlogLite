@@ -2,8 +2,8 @@ from werkzeug.exceptions import HTTPException
 
 import json
 from flask import g, make_response
-from flask_restful import Resource, Api, fields, marshal_with, reqparse, marshal
-from sqlalchemy import select, update
+from flask_restful import Resource, Api, fields, marshal_with, reqparse
+from sqlalchemy import select
 from app import app
 
 from models import *
