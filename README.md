@@ -15,6 +15,6 @@
 - Access the application at `http://127.0.0.1:5000`
 ---
 ### Screenshots from the app
-![login page](https://github.com/ishashukla183/BlogLite/blob/master/Screenshots/login.png) ![home page](https://github.com/ishashukla183/BlogLite/blob/master/Screenshots/home.png)
-![profile](https://github.com/ishashukla183/BlogLite/blob/master/Screenshots/profile.png) ![edit profile](https://github.com/ishashukla183/BlogLite/blob/master/Screenshots/editprofile.png)
-![new post](https://github.com/ishashukla183/BlogLite/blob/master/Screenshots/newpost.png) ![comment and like](https://github.com/ishashukla183/BlogLite/blob/master/Screenshots/comment.png)
+<img src="Screenshots/login.png"> <img src="Screenshots/home.png">
+<img src="Screenshots/profile.png"> <img src="Screenshots/editprofile.png">
+<img src="Screenshots/newpost.png> <img src=>Screenshots/comment.png">
