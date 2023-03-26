@@ -1,6 +1,0 @@
-flask
-flask_restful
-flask_login
-sqlalchemy
-flask_security
-flask_excel
