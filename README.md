@@ -16,22 +16,22 @@
 ---
 ### Screenshots from the app
 ---
-#### Login page
+### Login page
 ![login](https://user-images.githubusercontent.com/93022787/229724790-0fd6a209-4dbe-4c3e-aee9-28f580384c20.png) 
 ---
-#### Home page
+### Home page
 ![home](https://user-images.githubusercontent.com/93022787/229724937-7c06d4b3-c1d5-4d3b-bf6c-0dc4b94e2be9.png) 
 ---
-#### Edit profile
+### Edit profile
 ![editprofile](https://user-images.githubusercontent.com/93022787/229725102-2f16ef8b-250a-495e-b0b8-8fd0a6f5ced9.png)
 ---
-#### Comment
+### Comment
 ![comment](https://user-images.githubusercontent.com/93022787/229725139-e25c256a-51c6-4413-b92c-6a2d70caa55a.png)
 ---
-#### Add a new post
+### Add a new post
 ![newpost](https://user-images.githubusercontent.com/93022787/229725198-bd0c2f53-7c4c-4d09-bbba-68bbfb2d0971.png)
 ---
-#### Profile page
+### Profile page
 ![profile](https://user-images.githubusercontent.com/93022787/229725241-d4f2dc95-ceba-4c13-bc44-4e2afef24f3c.png)
 
 
